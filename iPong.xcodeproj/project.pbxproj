@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		734769372C9B40C1000FE8ED /* iPong Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 734769362C9B40C1000FE8ED /* iPong Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		734769382C9B40C1000FE8ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7347692A2C9B40C1000FE8ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 734769352C9B40C1000FE8ED;
+			remoteInfo = "iPong Watch App";
+		};
+		734769492C9B40C5000FE8ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7347692A2C9B40C1000FE8ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 734769352C9B40C1000FE8ED;
+			remoteInfo = "iPong Watch App";
+		};
+		734769532C9B40C5000FE8ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7347692A2C9B40C1000FE8ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 734769352C9B40C1000FE8ED;
+			remoteInfo = "iPong Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7347695F2C9B40C5000FE8ED /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				734769372C9B40C1000FE8ED /* iPong Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		734769302C9B40C1000FE8ED /* iPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		734769362C9B40C1000FE8ED /* iPong Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPong Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		734769482C9B40C5000FE8ED /* iPong Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iPong Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		734769522C9B40C5000FE8ED /* iPong Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iPong Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		7347693A2C9B40C1000FE8ED /* iPong Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "iPong Watch App";
+			sourceTree = "<group>";
+		};
+		7347694B2C9B40C5000FE8ED /* iPong Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "iPong Watch AppTests";
+			sourceTree = "<group>";
+		};
+		734769552C9B40C5000FE8ED /* iPong Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "iPong Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		734769332C9B40C1000FE8ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		734769452C9B40C5000FE8ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7347694F2C9B40C5000FE8ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		734769292C9B40C1000FE8ED = {
+			isa = PBXGroup;
+			children = (
+				7347693A2C9B40C1000FE8ED /* iPong Watch App */,
+				7347694B2C9B40C5000FE8ED /* iPong Watch AppTests */,
+				734769552C9B40C5000FE8ED /* iPong Watch AppUITests */,
+				734769312C9B40C1000FE8ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		734769312C9B40C1000FE8ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				734769302C9B40C1000FE8ED /* iPong.app */,
+				734769362C9B40C1000FE8ED /* iPong Watch App.app */,
+				734769482C9B40C5000FE8ED /* iPong Watch AppTests.xctest */,
+				734769522C9B40C5000FE8ED /* iPong Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7347692F2C9B40C1000FE8ED /* iPong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 734769602C9B40C5000FE8ED /* Build configuration list for PBXNativeTarget "iPong" */;
+			buildPhases = (
+				7347692E2C9B40C1000FE8ED /* Resources */,
+				7347695F2C9B40C5000FE8ED /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				734769392C9B40C1000FE8ED /* PBXTargetDependency */,
+			);
+			name = iPong;
+			packageProductDependencies = (
+			);
+			productName = iPong;
+			productReference = 734769302C9B40C1000FE8ED /* iPong.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		734769352C9B40C1000FE8ED /* iPong Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7347695C2C9B40C5000FE8ED /* Build configuration list for PBXNativeTarget "iPong Watch App" */;
+			buildPhases = (
+				734769322C9B40C1000FE8ED /* Sources */,
+				734769332C9B40C1000FE8ED /* Frameworks */,
+				734769342C9B40C1000FE8ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7347693A2C9B40C1000FE8ED /* iPong Watch App */,
+			);
+			name = "iPong Watch App";
+			packageProductDependencies = (
+			);
+			productName = "iPong Watch App";
+			productReference = 734769362C9B40C1000FE8ED /* iPong Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		734769472C9B40C5000FE8ED /* iPong Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 734769632C9B40C5000FE8ED /* Build configuration list for PBXNativeTarget "iPong Watch AppTests" */;
+			buildPhases = (
+				734769442C9B40C5000FE8ED /* Sources */,
+				734769452C9B40C5000FE8ED /* Frameworks */,
+				734769462C9B40C5000FE8ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7347694A2C9B40C5000FE8ED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7347694B2C9B40C5000FE8ED /* iPong Watch AppTests */,
+			);
+			name = "iPong Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "iPong Watch AppTests";
+			productReference = 734769482C9B40C5000FE8ED /* iPong Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		734769512C9B40C5000FE8ED /* iPong Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 734769662C9B40C5000FE8ED /* Build configuration list for PBXNativeTarget "iPong Watch AppUITests" */;
+			buildPhases = (
+				7347694E2C9B40C5000FE8ED /* Sources */,
+				7347694F2C9B40C5000FE8ED /* Frameworks */,
+				734769502C9B40C5000FE8ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				734769542C9B40C5000FE8ED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				734769552C9B40C5000FE8ED /* iPong Watch AppUITests */,
+			);
+			name = "iPong Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "iPong Watch AppUITests";
+			productReference = 734769522C9B40C5000FE8ED /* iPong Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7347692A2C9B40C1000FE8ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					7347692F2C9B40C1000FE8ED = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					734769352C9B40C1000FE8ED = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					734769472C9B40C5000FE8ED = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 734769352C9B40C1000FE8ED;
+					};
+					734769512C9B40C5000FE8ED = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 734769352C9B40C1000FE8ED;
+					};
+				};
+			};
+			buildConfigurationList = 7347692D2C9B40C1000FE8ED /* Build configuration list for PBXProject "iPong" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 734769292C9B40C1000FE8ED;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 734769312C9B40C1000FE8ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7347692F2C9B40C1000FE8ED /* iPong */,
+				734769352C9B40C1000FE8ED /* iPong Watch App */,
+				734769472C9B40C5000FE8ED /* iPong Watch AppTests */,
+				734769512C9B40C5000FE8ED /* iPong Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7347692E2C9B40C1000FE8ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		734769342C9B40C1000FE8ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		734769462C9B40C5000FE8ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		734769502C9B40C5000FE8ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		734769322C9B40C1000FE8ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		734769442C9B40C5000FE8ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7347694E2C9B40C5000FE8ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		734769392C9B40C1000FE8ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 734769352C9B40C1000FE8ED /* iPong Watch App */;
+			targetProxy = 734769382C9B40C1000FE8ED /* PBXContainerItemProxy */;
+		};
+		7347694A2C9B40C5000FE8ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 734769352C9B40C1000FE8ED /* iPong Watch App */;
+			targetProxy = 734769492C9B40C5000FE8ED /* PBXContainerItemProxy */;
+		};
+		734769542C9B40C5000FE8ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 734769352C9B40C1000FE8ED /* iPong Watch App */;
+			targetProxy = 734769532C9B40C5000FE8ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7347695A2C9B40C5000FE8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7347695B2C9B40C5000FE8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		7347695D2C9B40C5000FE8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iPong Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = HPBRZ3ZK8N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = iPong;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sakannan.iPong.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		7347695E2C9B40C5000FE8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iPong Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = HPBRZ3ZK8N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = iPong;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sakannan.iPong.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		734769612C9B40C5000FE8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HPBRZ3ZK8N;
+				INFOPLIST_KEY_CFBundleDisplayName = iPong;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sakannan.iPong;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		734769622C9B40C5000FE8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HPBRZ3ZK8N;
+				INFOPLIST_KEY_CFBundleDisplayName = iPong;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sakannan.iPong;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		734769642C9B40C5000FE8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HPBRZ3ZK8N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sakannan.iPong-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPong Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iPong Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		734769652C9B40C5000FE8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HPBRZ3ZK8N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sakannan.iPong-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPong Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iPong Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		734769672C9B40C5000FE8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HPBRZ3ZK8N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sakannan.iPong-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "iPong Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		734769682C9B40C5000FE8ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HPBRZ3ZK8N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sakannan.iPong-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "iPong Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7347692D2C9B40C1000FE8ED /* Build configuration list for PBXProject "iPong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7347695A2C9B40C5000FE8ED /* Debug */,
+				7347695B2C9B40C5000FE8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7347695C2C9B40C5000FE8ED /* Build configuration list for PBXNativeTarget "iPong Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7347695D2C9B40C5000FE8ED /* Debug */,
+				7347695E2C9B40C5000FE8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		734769602C9B40C5000FE8ED /* Build configuration list for PBXNativeTarget "iPong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				734769612C9B40C5000FE8ED /* Debug */,
+				734769622C9B40C5000FE8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		734769632C9B40C5000FE8ED /* Build configuration list for PBXNativeTarget "iPong Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				734769642C9B40C5000FE8ED /* Debug */,
+				734769652C9B40C5000FE8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		734769662C9B40C5000FE8ED /* Build configuration list for PBXNativeTarget "iPong Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				734769672C9B40C5000FE8ED /* Debug */,
+				734769682C9B40C5000FE8ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7347692A2C9B40C1000FE8ED /* Project object */;
+}
