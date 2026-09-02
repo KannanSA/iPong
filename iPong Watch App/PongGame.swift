@@ -1,145 +1,130 @@
-//
-//  PongGame.swift
-//  iPong
-//
-//  Created by Kannan Sekar Annu Radha on 18/09/2024.
-//
-
-import Foundation
-import SwiftUI
 import Combine
+import SwiftUI
 import WatchKit
 
-class PongGame: ObservableObject {
-    // Screen dimensions
-    let screenWidth: CGFloat
-    let screenHeight: CGFloat
+protocol HapticPlaying {
+    func playWall()
+    func playPaddle()
+    func playScore(playerPoint: Bool)
+}
 
-    // Paddle properties
-    @Published var playerPaddlePosition: CGFloat = 85
-    @Published var aiPaddlePosition: CGFloat = 85
-
-    // AI Paddle X Position (fixed)
-    var aiPaddleXPosition: CGFloat {
-        screenWidth - 20
+struct WatchHaptics: HapticPlaying {
+    func playWall() {
+        WKInterfaceDevice.current().play(.click)
     }
 
-    // Ball properties
-    @Published var ballPosition: CGPoint = CGPoint(x: 68, y: 85)
-    private var ballVelocity: CGVector = CGVector(dx: 2, dy: 2)
-
-    // Scores
-    @Published var playerScore: Int = 0
-    @Published var aiScore: Int = 0
-
-    // Timer
-    private var gameTimer: AnyCancellable?
-
-    // Paddle movement speed for AI
-    private let paddleSpeed: CGFloat = 5
-
-    // Initialization
-    init() {
-        // Dynamically obtain screen dimensions
-        let screen = WKInterfaceDevice.current().screenBounds
-        screenWidth = screen.width
-        screenHeight = screen.height
-        resetGame()
+    func playPaddle() {
+        WKInterfaceDevice.current().play(.start)
     }
 
-    func startGame() {
-        // Start game loop
-        gameTimer = Timer.publish(every: 0.016, on: .main, in: .common) // ~60 FPS
+    func playScore(playerPoint: Bool) {
+        WKInterfaceDevice.current().play(playerPoint ? .success : .failure)
+    }
+}
+
+struct SilentHaptics: HapticPlaying {
+    func playWall() {}
+    func playPaddle() {}
+    func playScore(playerPoint: Bool) {}
+}
+
+@MainActor
+@Observable
+final class PongGame {
+    private(set) var engine: PongEngine
+    private(set) var isRunning = false
+
+    private var timer: AnyCancellable?
+    private var lastTick: Date?
+    private let haptics: any HapticPlaying
+
+    init(
+        courtSize: CGSize = CGSize(width: 198, height: 242),
+        haptics: any HapticPlaying = WatchHaptics()
+    ) {
+        self.engine = PongEngine(courtSize: courtSize)
+        self.haptics = haptics
+    }
+
+    var playerPaddleY: CGFloat {
+        get { engine.playerPaddleY }
+        set { engine.setPlayerPaddleY(newValue) }
+    }
+
+    var aiPaddleY: CGFloat { engine.aiPaddleY }
+    var ballPosition: CGPoint { engine.ballPosition }
+    var trail: [CGPoint] { engine.trail }
+    var playerScore: Int { engine.playerScore }
+    var aiScore: Int { engine.aiScore }
+    var metrics: PongMetrics { engine.metrics }
+    var phase: PongPhase { engine.phase }
+    var paddleMinY: CGFloat { engine.metrics.minPaddleY }
+    var paddleMaxY: CGFloat { engine.metrics.maxPaddleY }
+
+    func resize(to size: CGSize) {
+        engine.resize(to: size)
+    }
+
+    func start() {
+        guard timer == nil else {
+            isRunning = true
+            return
+        }
+        lastTick = Date()
+        isRunning = true
+        timer = Timer.publish(every: 1.0 / 30.0, on: .main, in: .common)
             .autoconnect()
-            .sink { [weak self] _ in
-                self?.updateGame()
+            .sink { [weak self] date in
+                self?.tick(now: date)
             }
     }
 
-    func resetGame() {
-        // Initialize positions
-        playerPaddlePosition = screenHeight / 2
-        aiPaddlePosition = screenHeight / 2
-        ballPosition = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
-        ballVelocity = CGVector(dx: Double.random(in: -2...2), dy: Double.random(in: -2...2))
-        playerScore = 0
-        aiScore = 0
+    func pause() {
+        isRunning = false
+        lastTick = nil
     }
 
-    func updateGame() {
-        // Update ball position
-        ballPosition.x += ballVelocity.dx
-        ballPosition.y += ballVelocity.dy
-
-        // Collision with top and bottom walls
-        if ballPosition.y <= 5 || ballPosition.y >= screenHeight - 5 {
-            ballVelocity.dy *= -1
-            // Determine direction for haptic feedback
-            let hapticType: WKHapticType = ballVelocity.dy > 0 ? .directionDown : .directionUp
-            playHapticFeedback(hapticType)
-            print("Ball collided with wall. New dy: \(ballVelocity.dy)")
-        }
-
-        // Collision with player paddle
-        if ballPosition.x <= 25, abs(ballPosition.y - playerPaddlePosition) <= 30 {
-            ballVelocity.dx *= -1
-            playHapticFeedback(.click)
-            print("Ball hit Player Paddle")
-        }
-
-        // Collision with AI paddle
-        if ballPosition.x >= screenWidth - 25, abs(ballPosition.y - aiPaddlePosition) <= 30 {
-            ballVelocity.dx *= -1
-            playHapticFeedback(.click)
-            print("Ball hit AI Paddle")
-        }
-
-        // Check for scoring
-        if ballPosition.x < 0 {
-            aiScore += 1
-            playHapticFeedback(.success)
-            print("AI Scores! AI: \(aiScore)")
-            resetBall(direction: .right)
-        } else if ballPosition.x > screenWidth {
-            playerScore += 1
-            playHapticFeedback(.success)
-            print("Player Scores! Player: \(playerScore)")
-            resetBall(direction: .left)
-        }
-
-        // Update AI paddle
-        updateAIPaddle()
+    func stop() {
+        pause()
+        timer?.cancel()
+        timer = nil
     }
 
-    enum BallDirection {
-        case left
-        case right
+    func resetMatch() {
+        engine.resetMatch()
     }
 
-    func resetBall(direction: BallDirection) {
-        ballPosition = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
-        // Reset velocity with direction
-        ballVelocity = CGVector(dx: direction == .left ? -2 : 2, dy: Double.random(in: -2...2))
-        // Determine direction for haptic feedback
-        let hapticType: WKHapticType = direction == .left ? .directionUp : .directionDown
-        playHapticFeedback(hapticType)
-        print("Ball reset. Direction: \(direction), New Velocity: \(ballVelocity)")
-    }
-
-    func updateAIPaddle() {
-        // Simple AI: move towards the ball's y position
-        let target = ballPosition.y
-        if aiPaddlePosition < target {
-            aiPaddlePosition += paddleSpeed
-        } else if aiPaddlePosition > target {
-            aiPaddlePosition -= paddleSpeed
+    func handleScenePhase(_ phase: ScenePhase) {
+        if phase == .active {
+            start()
+        } else {
+            pause()
         }
-        // Clamp position
-        aiPaddlePosition = max(30, min(screenHeight - 30, aiPaddlePosition))
-        print("AI Paddle Position Updated: \(aiPaddlePosition)")
     }
 
-    func playHapticFeedback(_ type: WKHapticType) {
-        WKInterfaceDevice.current().play(type)
+    func tick(now: Date) {
+        guard isRunning else { return }
+        let dt: TimeInterval
+        if let lastTick {
+            dt = now.timeIntervalSince(lastTick)
+        } else {
+            dt = 1.0 / 30.0
+        }
+        lastTick = now
+        engine.step(dt: dt)
+        playHaptic(for: engine.lastEvent)
+    }
+
+    private func playHaptic(for event: PongEvent?) {
+        switch event {
+        case .wall:
+            haptics.playWall()
+        case .paddle:
+            haptics.playPaddle()
+        case .scored(let byPlayer):
+            haptics.playScore(playerPoint: byPlayer)
+        case .none:
+            break
+        }
     }
 }
