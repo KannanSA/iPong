@@ -20,6 +20,7 @@ protocol PongMLPredicting {
 /// Simple intercept AI. Used whenever a Core ML model is missing or fails.
 struct TrackingOpponent: OpponentControlling {
     func desiredPaddleY(snapshot: PongSnapshot, dt: TimeInterval, metrics: PongMetrics) -> CGFloat {
+        _ = dt
         let comingTowardAI = snapshot.ballVelocity.dx > 12
         let target: CGFloat
         if comingTowardAI {
