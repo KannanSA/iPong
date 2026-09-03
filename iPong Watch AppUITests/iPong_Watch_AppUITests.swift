@@ -23,12 +23,10 @@ final class iPong_Watch_AppUITests: XCTestCase {
     }
 
     @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testLaunchShowsIPONGLabel() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(app.staticTexts["iPONG"].waitForExistence(timeout: 5))
     }
 
     @MainActor

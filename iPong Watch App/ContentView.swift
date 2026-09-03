@@ -1,56 +1,89 @@
-//
-//  ContentView.swift
-//  iPong Watch App
-//
-//  Created by Kannan Sekar Annu Radha on 18/09/2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var game = PongGame()
+    @State private var game = PongGame()
+    @FocusState private var crownFocused: Bool
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
-        ZStack {
-            // Background
-            Color.black
-                .edgesIgnoringSafeArea(.all)
+        GeometryReader { proxy in
+            let size = proxy.size
+            ZStack(alignment: .top) {
+                GamePalette.court.ignoresSafeArea()
 
-            // Middle Line
-            VStack {
-                Spacer()
-                Rectangle()
-                    .fill(Color.gray)
-                    .frame(width: 2, height: 200)
-                Spacer()
+                CourtView(
+                    metrics: game.metrics,
+                    playerY: game.playerPaddleY,
+                    aiY: game.aiPaddleY,
+                    ball: game.ballPosition,
+                    trail: game.trail,
+                    isServing: game.phase == .serving
+                )
+                .contentShape(Rectangle())
+                .gesture(paddleGesture)
+
+                GameHUD(
+                    playerScore: game.playerScore,
+                    aiScore: game.aiScore,
+                    onReset: { game.resetMatch() }
+                )
             }
-
-            // Player Paddle (Player 0) - Controlled by Touch
-            PlayerPaddleView(paddlePosition: $game.playerPaddlePosition, screenHeight: game.screenHeight)
-
-            // AI Paddle
-            Rectangle()
-                .fill(Color.red)
-                .frame(width: 10, height: 60)
-                .position(x: game.aiPaddleXPosition, y: game.aiPaddlePosition)
-
-            // Ball
-            Circle()
-                .fill(Color.white)
-                .frame(width: 10, height: 10)
-                .position(x: game.ballPosition.x, y: game.ballPosition.y)
-
-            // Score Display
-            VStack {
-                Text("Player: \(game.playerScore)")
-                    .foregroundColor(.white)
-                Text("AI: \(game.aiScore)")
-                    .foregroundColor(.white)
+            .onAppear {
+                game.resize(to: size)
+                game.start()
+                crownFocused = true
             }
-            .position(x: game.screenWidth / 2, y: 10) // Center top
+            .onChange(of: size) { _, newSize in
+                game.resize(to: newSize)
+            }
+        }
+        .ignoresSafeArea()
+        .focusable()
+        .focused($crownFocused)
+        .digitalCrownRotation(
+            crownBinding,
+            from: crownRange.lowerBound,
+            through: crownRange.upperBound,
+            by: 0.5,
+            sensitivity: .medium,
+            isContinuous: false,
+            isHapticFeedbackEnabled: true
+        )
+        .persistentSystemOverlays(.hidden)
+        .onChange(of: scenePhase) { _, phase in
+            game.handleScenePhase(phase)
+            if phase == .active {
+                crownFocused = true
+            }
         }
         .onAppear {
-            game.startGame()
+            crownFocused = true
         }
+        .accessibilityLabel("iPong. Digital Crown or drag to move your paddle.")
     }
+
+    private var crownRange: ClosedRange<Double> {
+        let minY = Double(game.paddleMinY)
+        let maxY = Double(game.paddleMaxY)
+        return minY < maxY ? minY...maxY : 0...1
+    }
+
+    private var crownBinding: Binding<Double> {
+        Binding(
+            get: { Double(game.playerPaddleY) },
+            set: { game.playerPaddleY = CGFloat($0) }
+        )
+    }
+
+    private var paddleGesture: some Gesture {
+        DragGesture(minimumDistance: 0)
+            .onChanged { value in
+                game.playerPaddleY = value.location.y
+                crownFocused = true
+            }
+    }
+}
+
+#Preview {
+    ContentView()
 }
